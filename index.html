@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tynye AI | Your Paper Book Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f5f3ff',
+                100: '#ede9fe',
+                200: '#ddd6fe',
+                300: '#c4b5fd',
+                400: '#a78bfa',
+                500: '#8b5cf6',
+                600: '#7c3aed',
+                700: '#6d28d9',
+                800: '#5b21b6',
+                900: '#4c1d95',
+              },
+              paper: '#FFFFFF'
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      ::selection {
+        background-color: #ede9fe;
+        color: #4c1d95;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-gray-900 antialiased selection:bg-brand-100 selection:text-brand-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
