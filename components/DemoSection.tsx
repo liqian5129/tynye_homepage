@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
-import { sendMessageToGemini } from '../services/geminiService';
 import { LoadingState } from '../types';
 import Button from './Button';
 import { Loader2, Sparkles, ScanLine, MessageSquareQuote } from 'lucide-react';
+
+// 模拟 AI 响应 - 在没有 API Key 时使用
+const MOCK_RESPONSES = [
+  "This text explores the concept of focus as a valuable and limited resource in our modern digital age. The key insight here is that immersive reading experiences are becoming increasingly rare due to constant mobile app distractions. This suggests that tools and environments that promote deep focus are becoming more valuable for knowledge workers and learners.",
+  "The passage highlights an interesting tension between technology and focused attention. While mobile apps offer convenience, they fragment our attention. The tynye device seems designed to bridge this gap - leveraging technology to enhance rather than distract from reading. This aligns with the growing 'slow media' movement.",
+  "Your text touches on a fascinating paradox: in an age of information abundance, our ability to deeply engage with that information has diminished. The solution isn't to abandon technology, but to use it more intentionally. Consider how you might create 'focus rituals' around your reading practice.",
+];
+
+// 模拟 API 调用
+const mockGeminiResponse = async (text: string, question: string | null): Promise<string> => {
+  // 模拟网络延迟
+  await new Promise(resolve => setTimeout(resolve, 1500));
+
+  if (question) {
+    return `Based on the scanned text "${text.substring(0, 50)}...", here's my analysis of your question "${question}":\n\nThe text suggests that maintaining focus in today's world requires intentional effort. To address your question, I would say that creating boundaries around our reading time - both physical and digital - is essential for deep comprehension and retention.`;
+  }
+
+  // 返回随机模拟响应
+  return MOCK_RESPONSES[Math.floor(Math.random() * MOCK_RESPONSES.length)];
+};
 
 const DemoSection: React.FC = () => {
   const [scannedText, setScannedText] = useState("Focus is a scarce resource: an immersive reading experience, undisturbed by mobile apps.");
@@ -15,7 +34,8 @@ const DemoSection: React.FC = () => {
     setStatus(LoadingState.LOADING);
     setResponse(null);
     try {
-      const result = await sendMessageToGemini(scannedText, question || null);
+      // 使用模拟响应
+      const result = await mockGeminiResponse(scannedText, question || null);
       setResponse(result);
       setStatus(LoadingState.SUCCESS);
     } catch (error) {
@@ -27,7 +47,7 @@ const DemoSection: React.FC = () => {
   return (
     <section id="demo" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-50 via-white to-white opacity-50 pointer-events-none"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
@@ -72,8 +92,8 @@ const DemoSection: React.FC = () => {
               />
             </div>
 
-            <Button 
-              onClick={handleSimulateScan} 
+            <Button
+              onClick={handleSimulateScan}
               disabled={status === LoadingState.LOADING || !scannedText}
               className="w-full"
               size="lg"
@@ -87,6 +107,10 @@ const DemoSection: React.FC = () => {
                 'Analyze with AI'
               )}
             </Button>
+
+            <p className="text-xs text-gray-400 mt-4 text-center">
+              Demo mode - responses are simulated for demonstration purposes
+            </p>
           </div>
 
           {/* Output Side */}
@@ -102,7 +126,7 @@ const DemoSection: React.FC = () => {
                     <div className="w-2 h-2 rounded-full bg-green-500"></div>
                   </div>
                </div>
-               
+
                {/* Screen Body */}
                <div className="flex-1 p-8 overflow-y-auto custom-scrollbar">
                   {status === LoadingState.IDLE && (
@@ -134,7 +158,7 @@ const DemoSection: React.FC = () => {
                         <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Context</p>
                         <p className="text-gray-300 text-sm italic line-clamp-2">"{scannedText}"</p>
                       </div>
-                      
+
                       <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                         <div className="flex items-center space-x-3 mb-4">
                           <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center shadow-lg shadow-brand-900/50">
