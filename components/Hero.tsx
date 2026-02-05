@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative">
       {/* 第一部分：全屏背景图 + 文字叠加 */}
-      <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+      <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden mt-20">
         {/* 背景图片 - 请将图片放置在 public/images/hero-banner.jpg */}
         <div className="absolute inset-0">
           <img

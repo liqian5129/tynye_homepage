@@ -67,12 +67,12 @@ const translations = {
       mainTitle: "Designed for the Modern Reader",
       description: "tynye is the world's first AI bookmark that works independently from your phone. Scan paragraphs, generate notes, and discuss context—all while staying focused.",
       items: [
-        { title: "Reading Expert", desc: "An AI entity that represents a true 'Reading Lover'. A physical symbol of your intellectual journey." },
         { title: "Ultra Portable", desc: "Exquisite bookmark design. Physical companionship that fits perfectly inside your book." },
         { title: "Deep Focus", desc: "Immersive reading experience. Keep your phone away and stay in the flow state." },
         { title: "Smart Input", desc: "One-click scan and search. Efficiently capture content without photographing full pages." },
         { title: "Knowledge Graph", desc: "Build your personal knowledge map over time. Knowledge retention is a long-term investment." },
-        { title: "Weekly Review", desc: "Random quick reviews and weekly reports ensure that what you read is truly remembered." }
+        { title: "Weekly Review", desc: "Random quick reviews and weekly reports ensure that what you read is truly remembered." },
+        { title: "AI Insights", desc: "Let your notes grow. Connect and explore the content you've recorded with intelligent AI analysis." }
       ]
     },
     comparison: {
@@ -313,12 +313,12 @@ const translations = {
       mainTitle: "懂你的阅读伙伴",
       description: "tynye是世界上第一款AI书签。用户可以通过设备扫描词语或者段落，生成摘抄笔记.结合上下文解释内容，构建个人知识图谱。",
       items: [
-        { title: "读书达人", desc: "“阅读爱好者”实体表达，更强的书友象征。" },
-        { title: "极度便携", desc: "精美的书签，物理伴随感，“读书搭子”的实体化。" },
+        { title: "极度便携", desc: "精美的书签，物理伴随感，"读书搭子"的实体化。" },
         { title: "专注稀缺", desc: "沉浸的阅读体验，不被手机app打扰。" },
         { title: "高效便捷", desc: "快速准确的输入内容，一键摘抄 and 搜索，无需上传整页。" },
         { title: "知识留存", desc: "构建纸质书爱好者的个人知识图谱，知识留存是长期投资。" },
-        { title: "定期回顾", desc: "不定期的快速回顾笔记，让记录不再是一次性的事情。" }
+        { title: "定期回顾", desc: "不定期的快速回顾笔记，让记录不再是一次性的事情。" },
+        { title: "AI洞察", desc: "让笔记生长，连接和探索我们记录的内容。" }
       ]
     },
     comparison: {

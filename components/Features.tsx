@@ -1,17 +1,17 @@
 import React from 'react';
-import { Brain, Feather, Focus, Link, Mic, History } from 'lucide-react';
+import { Feather, Focus, Mic, Link, History, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Features: React.FC = () => {
   const { t } = useLanguage();
 
   const icons = [
-    <Brain className="w-6 h-6" />,
     <Feather className="w-6 h-6" />,
     <Focus className="w-6 h-6" />,
     <Mic className="w-6 h-6" />,
     <Link className="w-6 h-6" />,
-    <History className="w-6 h-6" />
+    <History className="w-6 h-6" />,
+    <Sparkles className="w-6 h-6" />
   ];
 
   return (
