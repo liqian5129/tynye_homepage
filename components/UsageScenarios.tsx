@@ -2,12 +2,13 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Library, Trees, Coffee } from 'lucide-react';
 
-// 静态场景图片 - 使用 Unsplash 的稳定图片
+// 静态场景图片 - 本地图片路径
+// 请将图片放置在 public/images/ 目录下
 const SCENARIO_IMAGES = {
-  study: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&q=80',
-  library: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&h=450&fit=crop&q=80',
-  garden: 'https://images.unsplash.com/photo-1476673160081-cf065bc4cf87?w=800&h=450&fit=crop&q=80',
-  cafe: 'https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&h=450&fit=crop&q=80',
+  study: './images/scenario-study.jpg',      // 书房/学习场景
+  library: './images/scenario-library.jpg',  // 图书馆场景
+  garden: './images/scenario-garden.jpg',    // 花园/户外场景
+  cafe: './images/scenario-cafe.jpg',        // 咖啡馆场景
 };
 
 interface ScenarioCardProps {

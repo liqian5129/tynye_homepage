@@ -2,8 +2,9 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ShieldCheck, Lock, Smartphone, Cloud, Layout } from 'lucide-react';
 
-// 静态安全信息图 - 使用 Unsplash 的数据安全相关图片
-const SECURITY_IMAGE = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=675&fit=crop&q=80';
+// 静态安全信息图 - 本地图片路径
+// 请将图片放置在 public/images/ 目录下
+const SECURITY_IMAGE = './images/security.jpg';
 
 const DataSecurity: React.FC = () => {
   const { t } = useLanguage();

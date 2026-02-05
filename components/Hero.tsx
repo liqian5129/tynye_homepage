@@ -37,9 +37,10 @@ const Hero: React.FC = () => {
         <div className="mt-20 relative animate-slide-up" style={{animationDelay: '0.4s'}}>
            {/* Abstract Product Representation/Placeholder */}
            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900 aspect-[16/9] md:aspect-[21/9] flex items-center justify-center group">
-              <img 
-                src="https://picsum.photos/1920/800" 
-                alt="tynye AI Bookmark Lifestyle" 
+{/* 主图 - 请将图片放置在 public/images/hero-banner.jpg */}
+              <img
+                src="./images/hero-banner.jpg"
+                alt="tynye AI Bookmark Lifestyle"
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
