@@ -6,7 +6,6 @@ import UsageScenarios from './components/UsageScenarios';
 import Features from './components/Features';
 import DataSecurity from './components/DataSecurity';
 import Testimonials from './components/Testimonials';
-import Comparison from './components/Comparison';
 import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
@@ -54,7 +53,6 @@ const PageContent = () => {
         <HowItWorks />
         <DataSecurity />
         <Testimonials />
-        <Comparison />
         <Pricing />
       </main>
       <Footer />

@@ -62,7 +62,6 @@ const Navbar: React.FC = () => {
           
           <div className="hidden md:flex items-center space-x-8">
             <button onClick={() => handleNavClick('features')} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{t.nav.features}</button>
-            <button onClick={() => handleNavClick('comparison')} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{t.nav.compare}</button>
             <button onClick={() => handleNavClick('how-it-works')} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{t.nav.howItWorks}</button>
             <button onClick={() => handleNavClick('pricing')} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{t.nav.pricing}</button>
             
@@ -143,7 +142,6 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-white border-b border-gray-100 absolute w-full h-screen">
           <div className="px-4 pt-2 pb-6 space-y-2">
             <button onClick={() => { handleNavClick('features'); setMobileMenuOpen(false); }} className="block w-full text-left px-3 py-4 text-lg font-medium text-gray-600 border-b border-gray-50">{t.nav.features}</button>
-            <button onClick={() => { handleNavClick('comparison'); setMobileMenuOpen(false); }} className="block w-full text-left px-3 py-4 text-lg font-medium text-gray-600 border-b border-gray-50">{t.nav.compare}</button>
             <button onClick={() => { handleNavClick('how-it-works'); setMobileMenuOpen(false); }} className="block w-full text-left px-3 py-4 text-lg font-medium text-gray-600 border-b border-gray-50">{t.nav.howItWorks}</button>
             <button onClick={() => { handleNavClick('pricing'); setMobileMenuOpen(false); }} className="block w-full text-left px-3 py-4 text-lg font-medium text-gray-600 border-b border-gray-50">{t.nav.pricing}</button>
             
