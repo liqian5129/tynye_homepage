@@ -9,57 +9,53 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      {/* 主要区域：左文字 + 右图片 */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white">
+      {/* 主要区域：两边留空，中间背景图+文字叠加 */}
+      <section className="pt-28 pb-16 lg:pt-32 lg:pb-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* 左侧：文字内容 */}
-            <div className="order-2 lg:order-1">
-              {/* 标签 */}
-              <div className="inline-flex items-center space-x-2 bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs font-medium mb-6">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                <span>{t.hero.tag}</span>
-              </div>
+          {/* 背景图容器 */}
+          <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden min-h-[500px] lg:min-h-[600px]">
+            {/* 背景图片 */}
+            <img
+              src="./images/hero-banner.jpg"
+              alt="tynye AI Bookmark"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* 暗色渐变遮罩 - 左侧更暗 */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20"></div>
 
-              {/* 主标题 */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-                {t.hero.title}
-              </h1>
+            {/* 文字内容 - 左下角定位 */}
+            <div className="absolute inset-0 flex items-end">
+              <div className="p-8 lg:p-12 w-full max-w-xl">
+                {/* 标签 */}
+                <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-medium mb-6 border border-white/20">
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                  <span>{t.hero.tag}</span>
+                </div>
 
-              {/* 副标题 */}
-              <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                {t.hero.subtitle}
-              </p>
+                {/* 主标题 */}
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+                  {t.hero.title}
+                </h1>
 
-              {/* 按钮 */}
-              <div className="flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-4">
-                <Button size="md" className="shadow-lg">
-                  {t.hero.ctaPrimary}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="md"
-                  className="group"
-                  onClick={() => setShowVideo(true)}
-                >
-                  <Play className="w-4 h-4 mr-2 fill-current group-hover:text-brand-700 transition-colors" />
-                  {t.hero.ctaSecondary}
-                </Button>
-              </div>
-            </div>
+                {/* 副标题 */}
+                <p className="text-sm md:text-base text-gray-200 mb-6 leading-relaxed">
+                  {t.hero.subtitle}
+                </p>
 
-            {/* 右侧：产品图片 */}
-            <div className="order-1 lg:order-2">
-              <div className="relative">
-                {/* 装饰背景 */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand-100 to-brand-50 rounded-3xl blur-2xl opacity-60"></div>
-                {/* 图片容器 */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-                  <img
-                    src="./images/hero-banner.jpg"
-                    alt="tynye AI Bookmark"
-                    className="w-full h-auto object-cover"
-                  />
+                {/* 按钮 */}
+                <div className="flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                  <Button size="md" className="shadow-lg">
+                    {t.hero.ctaPrimary}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="md"
+                    className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+                    onClick={() => setShowVideo(true)}
+                  >
+                    <Play className="w-4 h-4 mr-2 fill-current" />
+                    {t.hero.ctaSecondary}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -87,7 +83,6 @@ const Hero: React.FC = () => {
 
             {/* 视频容器 */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
-              {/* 视频封面 - 请将图片放置在 public/images/video-cover.jpg */}
               <img
                 src="./images/video-cover.jpg"
                 alt="tynye AI Demo"
